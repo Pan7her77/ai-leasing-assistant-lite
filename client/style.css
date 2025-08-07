@@ -1,0 +1,54 @@
+.properties {
+    max-width: 800px;
+    margin: 50 auto;
+    border-radius: 15px;
+  }
+
+  .listing-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .property-image::before, .property-image::after {
+    content: '';
+    position: absolute;
+    /* Creates the X pattern */
+  }
+
+  .filter-dropdown {
+    appearance: none;  /* Removes default browser styling */
+    background-image: url('data:image/svg+xml...');  /* Custom arrow */
+  }
+
+  @media (max-width: 600px) {
+    .listing-item {
+      flex-direction: column;  /* Stacks items vertically on mobile */
+    }
+  }
+  
+/*Tour Section*/
+  .tours {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;  
+}
+
+  @media (max-width: 600px) {
+    .tour-form-item {
+      flex-direction: column;  /* Stacks items vertically on mobile */
+    }
+  }
+.tour-form {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 20px;
+}
+.tour-form input, .tour-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
