@@ -1,54 +1,107 @@
-.properties {
-    max-width: 800px;
-    margin: 50 auto;
-    border-radius: 15px;
-  }
-
-  .listing-item {
+.main {
     display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .property-image::before, .property-image::after {
-    content: '';
-    position: absolute;
-    /* Creates the X pattern */
-  }
-
-  .filter-dropdown {
-    appearance: none;  /* Removes default browser styling */
-    background-image: url('data:image/svg+xml...');  /* Custom arrow */
-  }
-
-  @media (max-width: 600px) {
-    .listing-item {
-      flex-direction: column;  /* Stacks items vertically on mobile */
-    }
-  }
-  
-/*Tour Section*/
-  .tours {
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 15px;  
+    gap: 30px;
+    align-items: flex-start;  /* Fixed: added hyphen */
 }
 
-  @media (max-width: 600px) {
-    .tour-form-item {
-      flex-direction: column;  /* Stacks items vertically on mobile */
-    }
-  }
+.properties {
+    max-width: 800px;
+    margin: 50px auto;  /* Fixed: added 'px' */
+    border-radius: 15px;
+    text-align: left;
+    flex: 2;
+}
+
+/* Style for property image placeholders */
+.property-image {
+    width: 120px;
+    height: 120px;
+    background-color: #d3d3d3;
+    border: 2px solid #333;
+    border-radius: 8px;
+    position: relative;  /* Added: needed for absolute positioning */
+    flex-shrink: 0;      /* Added: prevents image from shrinking */
+}
+
+/* Create the X pattern using pseudo-elements */
+.property-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 2px;
+    background-color: #666;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.property-image::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 2px;
+    background-color: #666;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Make sure your listing items are flexed to show image + text side by side */
+.listing {
+    display: flex;
+    align-items: flex-start;  /* Fixed: added hyphen */
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    gap: 15px;
+}
+
+.listing-content {
+    flex: 1;
+}
+
+.filter-dropdown {
+    appearance: none;
+    background-image: url('data:image/svg+xml...');
+}
+
+/* Tours Section */
+.tours {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    text-align: center;  
+    position: relative;
+    flex: 1;
+    padding: 20px;
+}
+
 .tour-form {
     max-width: 800px;
     margin: 0 auto;
     border-radius: 15px;
     padding: 20px;
 }
+
 .tour-form input, .tour-form select {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .main {  /* Fixed: changed from .main-content */
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .listing {  /* Fixed: changed from .listing-item */
+        flex-direction: column;
+    }
 }

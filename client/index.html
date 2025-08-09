@@ -7,55 +7,80 @@
 
     <body>
         <!--Title page-->
-            <div class="heading">
-                <h1>Leasing Assissant Lite</h1>
-            </div>
+        <div class="heading">
+            <h1>Leasing Assistant Lite</h1>
+            <h2>Welcome to Leasing Assistant Lite</h2>
+            <p>This is a simple web application to assist with leasing management.</p>
+        </div>
 
         <!--Main Content-->
-            <div class="main">
-                <h2>Welcome to Leasing Assistant Lite</h2>
-                <p>This is a simple web application to assist with leasing management.</p>
+        <div class="main">
+            <div class="properties">
+                <h3 class="header">Property Listings</h3>
+                <div class="search-section">
+                    <button class="btn">Search</button>
+                </div>
 
-                    <div class="properties">
-                        <h3 class="header">Property Listings</h3>
-                        <div class="search-section">
-                            <button class="btn">Search</button>
-
-                            <div class="listings">
-                                <div class="listing">
-                                    <h4>Listing 1</h4>
-                                    <p>Price: $2000/month</p>
-                                    <p>2 BD | 1 BA</p>
-                                    <button class="btn">View Details</button>
-                                </div>
-                                <div class="listing">
-                                    <h4>Listing 2</h4>
-                                    <p>Price: $2500/month</p>
-                                    <p>1 BD | 1 BA</p>
-                                    <button class="btn">View Details</button>
-                                </div>
-                                <div class="listing">
-                                    <h4>Listing 3</h4>
-                                    <p>Price: $1800/month</p>
-                                    <p>3 BD | 2 BA</p>
-                                    <button class="btn">View Details</button>
-                                </div>
-                            </div>
+                <div class="listings">
+                    <!-- Each listing needs its own container -->
+                    <div class="listing">
+                        <div class="property-image"></div>
+                        <div class="listing-content">
+                            <h4>Listing 1</h4>
+                            <p>Price: $2000/month</p>
+                            <p>2 BD | 1 BA</p>
+                            <button class="btn">View Details</button>
                         </div>
                     </div>
 
-                    <div class="tours">
-                        <h3 class="header">Schedule a Tour</h3>
-                        <div class="tour-form">
-                            <form>
-                                <input type="text" placeholder="Name" required>
-                                <input type="text" placeholder="Email" required>
-                                <input type="text" placeholder="Phone" required>
-                                <input type="text" placeholder="Select a Property" required>
-                                <input type="text" placeholder="Date" required>
-                            </form>
+                    <div class="listing">
+                        <div class="property-image"></div>
+                        <div class="listing-content">
+                            <h4>Listing 2</h4>
+                            <p>Price: $1800/month</p>
+                            <p>1 BD | 1 BA</p>
+                            <button class="btn">View Details</button>
                         </div>
                     </div>
+
+                    <div class="listing">
+                        <div class="property-image"></div>
+                        <div class="listing-content">
+                            <h4>Listing 3</h4>
+                            <p>Price: $3000/month</p>
+                            <p>3 BD | 2 BA</p>
+                            <button class="btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="tours">
+                <h3 class="header">Schedule a Tour</h3>
+                <div class="tour-form">
+                    <form>
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="tel" placeholder="Phone" required>
+                        <select required>
+                            <option value="">Select a Property</option>
+                            <option value="listing1">Listing 1 - $2000/month</option>
+                            <option value="listing2">Listing 2 - $1800/month</option>
+                            <option value="listing3">Listing 3 - $3000/month</option>
+                        </select>
+                        <input type="date" required>
+                        <button type="submit" class="btn">Schedule Tour</button>
+                    </form>
+                </div>
+            </div>
+            <div class="AIchatbot">
+                <h3 class="header">AI Chat</h3>
+                <div class="chatbot">
+                    <p>Ask me anything about leasing!</p>
+                    <textarea placeholder="Type your question here..."></textarea>
+                    <button class="btn">Send</button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
