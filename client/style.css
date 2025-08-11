@@ -1,29 +1,64 @@
 .main {
     display: flex;
-    gap: 30px;
-    align-items: flex-start;  /* Fixed: added hyphen */
+    gap: 20px;
+    align-items: flex-start;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #224291;
+}
+
+h1, 
+h2,
+h3,
+h4 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+button {
+    background-color: #ff3100;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .properties {
-    max-width: 800px;
-    margin: 50px auto;  /* Fixed: added 'px' */
-    border-radius: 15px;
-    text-align: left;
-    flex: 2;
+    flex: 2; /* Takes up most space */
 }
 
-/* Style for property image placeholders */
 .property-image {
     width: 120px;
     height: 120px;
-    background-color: #d3d3d3;
     border: 2px solid #333;
     border-radius: 8px;
-    position: relative;  /* Added: needed for absolute positioning */
-    flex-shrink: 0;      /* Added: prevents image from shrinking */
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden; /* Ensures image fits within container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Fallback if image doesn't load */
 }
 
-/* Create the X pattern using pseudo-elements */
+/* Style the actual images */
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintains aspect ratio while filling container */
+    border-radius: 6px; /* Slightly smaller than container border-radius */
+}
+
+/* Remove the X pattern CSS since you have real images */
+/* DELETE THESE - they conflict with real images
 .property-image::before {
     content: '';
     position: absolute;
@@ -45,6 +80,7 @@
     background-color: #666;
     transform: translate(-50%, -50%) rotate(-45deg);
 }
+*/
 
 /* Make sure your listing items are flexed to show image + text side by side */
 .listing {
@@ -68,14 +104,7 @@
 
 /* Tours Section */
 .tours {
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    text-align: center;  
-    position: relative;
-    flex: 1;
-    padding: 20px;
+    flex: 1; /* Sidebar space */
 }
 
 .tour-form {
@@ -93,6 +122,24 @@
     border: 1px solid #ccc;
 }
 
+.AIchatbot {
+    flex: 1; /* Equal space with tours */
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.chatbot textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .main {  /* Fixed: changed from .main-content */
@@ -102,6 +149,13 @@
 
 @media (max-width: 600px) {
     .listing {  /* Fixed: changed from .listing-item */
+        flex-direction: column;
+    }
+}
+
+/* Make it stack on smaller screens */
+@media (max-width: 1024px) {
+    .main {
         flex-direction: column;
     }
 }
