@@ -5,25 +5,25 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #224291;
+    background-color: white;
 }
 
 h1, 
 h2,
 h3,
 h4 {
-    color: white;
+    color: black;
 }
 
 p {
-    color: white;
+    color: black;
 }
 
 button {
-    background-color: #ff3100;
+    background-color: #224291;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -55,6 +55,7 @@ button {
     height: 100%;
     object-fit: cover; /* Maintains aspect ratio while filling container */
     border-radius: 6px; /* Slightly smaller than container border-radius */
+    object-fit: cover; /* Ensures the image covers the container */
 }
 
 /* Remove the X pattern CSS since you have real images */
@@ -87,14 +88,11 @@ button {
     display: flex;
     align-items: flex-start;  /* Fixed: added hyphen */
     margin-bottom: 20px;
-    padding: 15px;
+    padding: 1.5rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 12px;
     gap: 15px;
-}
-
-.listing-content {
-    flex: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .filter-dropdown {
@@ -110,8 +108,9 @@ button {
 .tour-form {
     max-width: 800px;
     margin: 0 auto;
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .tour-form input, .tour-form select {
@@ -122,6 +121,10 @@ button {
     border: 1px solid #ccc;
 }
 
+.tour-form .btn {
+    width: 100%;
+}
+
 .AIchatbot {
     flex: 1; /* Equal space with tours */
     max-width: 300px;
@@ -130,15 +133,55 @@ button {
     padding: 20px;
 }
 
-.chatbot textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    resize: vertical;
-}
+/* Chat Box */
+.chat-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .chat-header {
+    padding: 1rem;
+    background: #4a3aff;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    font-size: 0.9rem;
+  }
+  
+  .chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+  }
+  
+  .chat-input textarea {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    resize: none;
+    font-size: 0.9rem;
+  }
+  
+  .chat-input button {
+    background: #4a3aff;
+    color: white;
+    border: none;
+    padding: 0 1.2rem;
+    cursor: pointer;
+  }
+  
+  .chat-input button:hover {
+    background: #372dcc;
+  }
 
 /* Media Queries */
 @media (max-width: 768px) {
